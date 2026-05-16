@@ -1,0 +1,60 @@
+# Handle errors using try-except
+try:
+
+    # Heading of the electricity bill
+    print("========= ELECTRICITY BILL =========")
+
+    # Take customer name input
+    name = input("Enter your name : ")
+
+    # Take electricity units input
+    units = int(input("Enter the electricity Units : "))
+
+    # Design line
+    print("===================================")
+
+    # Display customer name
+    print("Customer Name :",name)
+
+    # Display total units consumed
+    print("Units Consumed :",units)
+
+    # Separator line
+    print("-----------------------------------")
+
+    # If units are 100 or less
+    # First 100 units are free
+    if (units <= 100):
+        print("Total bill: 0 (First 100 units free)")
+
+    # If units are between 101 and 200
+    elif (units <= 200):
+
+        # Calculate bill after first 100 free units
+        bill = (units - 100) * 5
+
+        # Display total bill
+        print("Total bill :",bill )
+
+    # If units are above 200
+    else:
+
+        # Calculate:
+        # 100 units × 5 = 500
+        # Remaining units × 10
+        bill = (100 * 5) + (units - 200) * 10
+
+        # Display total bill
+        print("Total bill :",bill)
+
+# If invalid input occurs
+except:
+
+    # Error design line
+    print("-----------------------------------")
+
+    # Error message
+    print("Error: Please enter valid number for units")
+
+# Ending line
+print("===================================")
